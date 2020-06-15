@@ -1,0 +1,59 @@
+<!-- 
+    11-liste-suite.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        // très facile de sélectionner tous les li qui sont dans la page
+
+        let listeLi = $("li");
+        console.log(listeLi); // la variable listeLi contient l'ensemble des li
+
+        // je veux récupérer le premier li dans la page
+
+        // 1ère solution possible
+        let firstLi =  $("li:first-child");
+        // ajoute un sélectioner css :first-child
+
+        console.log(firstLi);
+        
+        // 2ème solution possible 
+        let firstLi2 = $("li:nth-child(1)");
+        // ajoute un sélectioner css :nth-child(1)
+        
+        console.log(firstLi2);
+
+        // 3ème possibilité
+
+        let firstLi3 = $("li").first();
+        // via la méthode jquery .first();
+
+        console.log(firstLi3);
+
+        // dernier li 
+        console.log($("li").last());
+
+        // deuxième élément li dans la page de nth eq (equal)
+        console.log($("li").eq(1)); // commence à partir de 0
+
+        // récupérer le dernier li dans la page est lui insérer le texte : dernier élément
+        $("li").last().html("dernier élément");
+
+    </script>
+</body>
+</html>
+<!-- 
+    12-table.html
+-->

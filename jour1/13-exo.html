@@ -1,0 +1,80 @@
+<!-- 
+    créer le fichier 13-exo.html
+
+    dans la balise body 
+        div avec la class container
+             une section avec 3 listes
+                ul avec 4 li  
+                ol class jour avec 3 li
+                ol class annee avec 5 li 
+
+    Avec jQuery :
+
+    remplir le 1er li du ul avec le texte jquery
+    remplir le 2eme li du ul avec le texte bootstrap
+    remplir tous les li de l'élément avec la class jour avec le texte : 02/12/2019
+    pour la dernière liste, remplir le premier li avec le texte : bonjour
+    pour la dernière liste, remplir le dernier li avec le texte : final
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <section>
+            <!-- ul>li*4 -->
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <!-- ol.jour>li*3 -->
+            <ol class="jour">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+            <!-- ol.annee>li*5 -->
+            <ol class="annee">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </section>
+    </div>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        /* remplir le 1er li du ul avec le texte jquery
+    remplir le 2eme li du ul avec le texte bootstrap
+    remplir tous les li de l'élément avec la class jour avec le texte : 02/12/2019
+    pour la dernière liste, remplir le premier li avec le texte : bonjour
+    pour la dernière liste, remplir le dernier li avec le texte : final
+            */
+        $("ul li:first-child").html("jquery");
+        // équivalent
+        // $("ul li").first().html("jquery");
+
+        $("ul li:nth-child(2)").html("bootstrap");
+        // équivalent 
+        // $("ul li").eq(1).html("boostrap");
+
+        $(".jour li").html("02/12/2019");
+
+        $(".annee li:first").html("bonjour");
+        //$(".annee li").first().html("bonjour");
+        //$("ol:last-child li:first-child").html("bonjour");
+
+        $(".annee li:last-child").html("final");
+        //$(".annee li").last().html("final");
+        //$("ol:last-child li:last-child").html("malik");
+
+    </script>
+</body>
+</html>

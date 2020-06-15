@@ -1,0 +1,157 @@
+<!-- 
+    12-table.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        en html il existe plusieurs balises pour dessiner tableau
+    -->
+    <table><!-- balise qui va contenir votre tableau -->
+        <tr> <!-- cette balise ne fonctionne que DANS la balise table ne peut pas être utilisée ailleurs tr = table row = alignement / ligne -->
+            <td><!-- balise de cellule case : table div -->
+
+            </td>
+        </tr>
+    </table>
+    <!-- MDN => le site de référence pour apprendre le html / css / javascript 
+        google mdn => Mozilla Developer Network > Technologies > HTML > HTML elements
+    -->
+
+    <!-- créer un tableau 
+        3 lignes et 4 cellules 
+    -->
+    <table class="coordonnee">
+        <tr>
+            <td>Numéro</td>
+            <td>prénom</td>
+            <td>nom</td>
+            <td>tel </td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Alain</td>
+            <td>Doe</td>
+            <td>010101010101</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Béatrice</td>
+            <td>Doe</td>
+            <td>010101010101</td>
+        </tr>
+    </table>
+    <style>
+        .coordonnee{
+            border-collapse: collapse;
+        }
+        .coordonnee td{
+            border:1px solid black;
+        }
+    </style>
+
+    <!-- Emmet pour créer rapidement un tableau
+        tableau 5 lignes et 3 colonnes
+         table>tr*5>td*3>lorem1
+    -->
+    <table>
+        <tr>
+            <td>Lorem.</td>
+            <td>Dolores?</td>
+            <td>Maiores?</td>
+        </tr>
+        <tr>
+            <td>Repellendus.</td>
+            <td>Numquam!</td>
+            <td>Laboriosam.</td>
+        </tr>
+        <tr>
+            <td>Fugit!</td>
+            <td>Reiciendis?</td>
+            <td>Ratione.</td>
+        </tr>
+        <tr>
+            <td>Similique.</td>
+            <td>Aperiam!</td>
+            <td>Fugit.</td>
+        </tr>
+        <tr>
+            <td>Ipsa.</td>
+            <td>Consectetur.</td>
+            <td>Quibusdam!</td>
+        </tr>
+    </table>
+
+    <!-- créer via emmet un tableau qui a 5 lignes et 6 colonnes qui contient 2 mots fictifs chaqu cellule 
+     table>tr*5>td*6>lorem2
+    -->
+    <table>
+        <tr>
+            <td>Lorem, ipsum.</td>
+            <td>Quam, quae!</td>
+            <td>Accusamus, dolores.</td>
+            <td>Commodi, enim.</td>
+            <td>At, fuga.</td>
+            <td>Fugit, impedit!</td>
+        </tr>
+        <tr>
+            <td>Unde, distinctio.</td>
+            <td>Sint, sunt?</td>
+            <td>Consectetur, mollitia?</td>
+            <td>Deserunt, blanditiis.</td>
+            <td>Voluptates, aliquam.</td>
+            <td>Illo, ipsa.</td>
+        </tr>
+        <tr>
+            <td>Architecto, sequi.</td>
+            <td>Voluptates, sit.</td>
+            <td>Quos, perferendis!</td>
+            <td>Atque, accusamus.</td>
+            <td>Tenetur, natus.</td>
+            <td>Totam, autem.</td>
+        </tr>
+        <tr>
+            <td>Sunt, nemo?</td>
+            <td>Ad, quis.</td>
+            <td>Rem, quo.</td>
+            <td>Cumque, quod.</td>
+            <td>In, at?</td>
+            <td>Necessitatibus, optio?</td>
+        </tr>
+        <tr>
+            <td>Exercitationem, odio?</td>
+            <td>Sit, debitis?</td>
+            <td>Fuga, perspiciatis.</td>
+            <td>Dolore, illo?</td>
+            <td>Incidunt, aspernatur?</td>
+            <td>Ipsam, veniam?</td>
+        </tr>
+    </table>
+</body>
+</html>
+
+<!-- 
+    créer le fichier 13-exo.html
+
+    dans la balise body 
+        div avec la class container
+             une section avec 3 listes
+                ul avec 4 li  
+                ol class jour avec 3 li
+                ol class annee avec 5 li 
+
+    Avec jQuery :
+
+    remplir le 1er li du ul avec le texte jquery
+    remplir le 2eme li du ul avec le texte bootstrap
+    remplir tous les li de l'élément avec la class jour avec le texte : 02/12/2019
+    pour la dernière liste, remplir le premier li avec le texte : bonjour
+    pour la dernière liste, remplir le dernier li avec le texte : final
+
+-->
