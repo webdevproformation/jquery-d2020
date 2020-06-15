@@ -1,0 +1,48 @@
+<!-- 
+    10-liste.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        // le symbole $ est très puissant 
+        $("p").html("infos");
+        // vous allez remplir tous les paragraphes de paragraphes de de la page
+
+        //si vous  aviez eu envi de faire la même chose avec javascript natif
+        
+        // méthode 1 en javascript natif
+        document.querySelectorAll("p").forEach(function(p){
+            p.innerHTML = "ajout via javascript natif";
+        });
+
+        //méthode 2 en javascript natif
+        let ps = document.querySelectorAll("p");
+        for(let i = 0 ; i < ps.length ; i++){
+            ps[i].innerHTML = "ajout via javascript méthode 1";
+        }
+        // hélas non, il n'y a pas de méthode plus simple pour sélectionner tous les paragraphes de la page et le mettre un texte dedans
+
+        // pour Eugénio
+        // jQuery va t il disparaitre ?? => NON 
+        // trop projet qui utilisent jquery => énorme quantité de sites qui utilisent jquery 
+        // impossible que jquery n'existe plus d'ici 20 ans 
+        // la force de jquery (très apprécié par les développeurs )
+
+        // github va après le déjeuner !! rdv 13h30 salle de 3 !!!! 
+        // a toute suite !!
+
+    </script>
+</body>
+</html>

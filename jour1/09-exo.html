@@ -1,0 +1,58 @@
+<!-- 
+    créer un nouveau fichier 09-exo.html
+
+    dans la balise body 
+        h1 class logo
+        p avec l'id intro
+        ul qui contient 5 items (li)
+
+    importer jquery (comme vous voulez CDN / fichier local / le site officiel)
+
+    remplir la balise ayant la class logo Nouvel exercice
+
+    p remplir avec le texte suivant, utilisation des sélecteurs css pour facilier la selection des balises html à modifier
+
+    2ème li dans le ul => ajouter le texte : liste de courses
+
+    Dernier li dans le ul => ajouter le texte : A ne pas oublier !!
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="logo"></h1>
+    <p id="intro"></p>
+    <ul>
+        <li></li>
+        <li class="deuxieme"></li>
+        <li></li>
+        <li></li>
+        <li class="dernier"></li>
+    </ul>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $(".logo").html("Nouvel exercice") ;
+
+        $("#intro").html("utilisation des sélecteurs css pour facilier la selection des balises html à modifier");
+
+        $("ul li:nth-child(2)").html("liste de courses");
+        // utiliser le sélecteur css :nth-child(2)
+
+        $("ul li:last-child").html("A ne pas oublier !!");
+        // :first-child :last-child :nth-child() => sélecteur css 
+        // :first       :last       :nth-child()
+
+        $("ul li:nth-child(3)").html("troisieme élément");
+
+        $("ul li:first-child").html("premier élément");
+
+    </script>
+</body>
+</html>
+<!-- 
+    10-liste.html
+-->

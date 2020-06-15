@@ -1,0 +1,58 @@
+<!-- 
+    08-syntaxe.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="intro"></div>
+    <p> un peu de texte 
+        <span> encore du texte
+             <a href="#">lien vers la documentation</a>
+        </span>
+    </p>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        // Syntaxes de jquery 
+
+        // 2 manières d'utiliser jQuery
+        $("div")
+        $(".intro")
+
+        // ---- autre manière de faire 
+        jQuery("div")
+        jQuery(".intro")
+        // => $ alias de jQuery 
+
+        // on préférera la première syntaxe par ce qu'elle est plus courte
+        // vous pouvez remplacer le symbole $ par jQuery
+        jQuery(".intro").html("Bonjour les amis !");
+
+        // dans les guillemets => il faut utiliser des sélecteurs css classiques
+        $("p span a").html("texte du lien modifié");
+    </script>
+</body>
+</html>
+<!-- 
+    créer un nouveau fichier 09-exo.html
+
+    dans la balise body 
+        h1 class logo
+        p avec l'id intro
+        ul qui contient 5 items (li)
+
+    importer jquery (comme vous voulez CDN / fichier local / le site officiel)
+
+    remplir la balise ayant la class logo Nouvel exercice
+
+    p remplir avec le texte suivant, utilisation des sélecteurs css pour facilier la selection des balises html à modifier
+
+    2ème li dans le ul => ajouter le texte : liste de courses
+
+    Dernier li dans le ul => ajouter le texte : A ne pas oublier !!
+-->

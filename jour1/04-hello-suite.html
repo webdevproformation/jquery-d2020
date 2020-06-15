@@ -1,0 +1,50 @@
+<!-- 
+    04-hello-suite.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        il existe plusieurs manières d'importer jquery dans vos projets de site web
+        nous venons de voir une première manière :
+        => site officiel puis cliquer sur le lien version compressée
+
+        => autre manière CDN : Content delivery Network
+        => serveur sur internet => vont stocker la librairie jquery fournir gratuitement tous les sites qui ont besoin de jquery 
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js => lisible par un informaticiel  avec des sauts de ligne / des commentaires / variables qui ont un nom qui a du sens
+        https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js => version minifiée
+        lorsque l'on va télécharger dans nos projets html => version minifié (plus légère à envoyer sur le réseau )
+    -->
+</body>
+</html>
+<!-- 
+    créer le fichier 05-exo.html 
+
+    dans la balise body 
+        p
+        script importer jquery depuis le cdn de votre choix (prendre une version minifié de la librairie)
+        script 
+            remplir la balise p avec le texte suivant : les CDN permettent d'utiliser jquery
+
+    => vu ce que l'on va faire ensemble (en général prenez la dernière version disponible  / fonction avancée 2 et 3 => parfait il faut faire attention à la version  )
+    
+    => yarn add jquery => installer nodejs 
+    => Fatah pas nécessaire d'installer NodeJS pour travailler avec Jquery (pas besoin)
+    => Symfony Fatah => fichier webpack.config.js
+    dans ce fichier il faut ajouter une ligne 
+
+     .autoProvideVariables({
+        $: 'jquery',
+        jQuery: 'jquery',
+        'window.jQuery': 'jquery',
+    })
+-->

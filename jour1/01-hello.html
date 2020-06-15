@@ -1,0 +1,62 @@
+<!--
+    01-hello.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- 
+        jquery est une librairie = librairie est un fichier qui contient plein de code / fonction
+        Pour pouvoir utiliser jquery, il d'ABORD IMPORTER le fameux fichier qui contient le code de jquery
+        ??? où peux tu trouver ce code => sur site internet officiel de la librairie 
+        jquery.com (dans la barre d'adresse directement)
+
+        dans le site officiel => cliquez sur Download 
+        sur cette page => existe plus de 10 manières d'importer jquery dans vos projets 
+        une premier manière est d'utiliser une adresse internet 
+
+        cliquer sur le lien "Download the compressed, production jQuery 3.5.1"
+
+        https://code.jquery.com/jquery-3.5.1.min.js
+
+        importer (télécharger la librairie) jquery dans notre page web !! 
+    -->
+        <h1></h1>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <!-- une fois téléchargé jquery => utiliser jquery 
+            vous ne pouvez pas mettre la ligne précédente après la balise script 
+            elle doit être OBLIGATOIREMENT AVANT la balise script 
+        -->
+        <script>
+            // utiliser jquery
+            // notre premier script => dire bonjour !! hello world
+            // ajouter une balise h1 avant la balise qui importe jquery
+
+            // en javascript natif
+            document.querySelector("h1").innerHTML = "Bonjour";
+
+            // en jQuery
+            $("h1").html("Coucou les amis");
+
+        </script>
+</body>
+</html>
+
+<!-- 
+    créer un nouveau fichier dans le dossier jour1
+    02-exo.html
+
+    dans cette page web dans la balise 
+        body 
+            p 
+            script qui importe jquery
+
+            script
+                via jquery remplir la balise p avec le texte suivante : mon premier script avec jquery 
+
+-->
