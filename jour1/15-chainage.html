@@ -1,0 +1,66 @@
+<!-- 
+    15-chainage.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="container">
+            <p></p>
+            <p></p>
+            <p></p>
+            <p></p>
+        </div>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+        <script>
+            // changer texte du premier p
+            // changer la taille du police du premier p
+            // changer la couleur du premier
+            // CDN = servers plusieurs dans le monde en fonction de ta position géographique => le serveur le plus proche qui apportée la code jquery
+
+            // en javascript vanille / natif
+            // javascript vanille le javascript de base => celui que l'on a vu la semaine dernière
+            // javascript sans aucune librairie externe comme par exemple jQuery
+            document.querySelector("p").innerHTML = "texte dans p";
+            document.querySelector("p").style["font-size"] = "50px";
+            document.querySelector("p").style["color"] = "green";
+ 
+            // jQuery => réaliser les même actions que les 3 instructions précédentes mais moins de lignes
+
+            $("p").first()
+                  .html("texte dans p")
+                  .css('font-size',20)
+                  .css("color", "blue");
+
+            // chainage => autre manière de gagner en productivité 
+
+        </script>
+</body>
+</html>
+
+<!-- 
+    créer le fichier 16-exo.html :
+
+    div class container
+        h1
+        p
+        div
+    
+    avec jquery réaliser les modifications suivantes :
+
+    sur l'élément ayant la balise h1 
+                    écrire Titre principale de la page
+                    centrer dans la page le texte du titre
+    sur l'élément ayant la balise p
+                    écrire lorem ipsum
+                    marge en haut et bas de 40px
+    sur l'élément ayant la balise div
+                    écrire dedans le texte suivant : bonjour ami <br> comment allez vous
+                    changer la taille de police => 40px
+                    changer la couleur de police => lightblue
+
+-->

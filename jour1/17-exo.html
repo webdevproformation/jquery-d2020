@@ -1,0 +1,67 @@
+<!-- 
+    créer le fichier 17-exo.html
+
+    div class container
+        header
+        section
+        footer
+
+    via jQuery réaliser les modifications suivantes  
+    
+    pour la zone ayant la balise header
+        ajouter le texte html suivant :
+            <img src="https://via.placeholder.com/200x80" alt="">
+            et centrer l'image 
+    
+    pour la zone ayant la balise section
+        ajouter 10 images 
+         <img src="https://via.placeholder.com/350x200" alt="">
+         sous forme de grille de 4 colonnes
+    
+    pour la zone ayant la balise footer
+        écrire prénom - année en cours
+        centrer dans la page et un peu d'ombre portée au niveau du texte (text-shadow)
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- .container>header+section+footer -->
+    <div class="container">
+        <header></header>
+        <section></section>
+        <footer></footer>
+    </div>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        // entete du site 
+        $("header").html("<img src=\"https://via.placeholder.com/200x80\" alt=\"\">")
+                    .css("text-align", "center");
+
+        // vu que l'on veut 10 images 
+        // concaténation
+        let images = "";
+        for(let i = 0 ; i < 10 ; i++){
+            images += "<img src=\"https://via.placeholder.com/350x200\" alt=\"\">";
+        }
+        $("section").html(images)
+                    .css("display", "grid")
+                    .css("grid-template-columns", "repeat(4,1fr)")
+                    .css("grid-gap", 10);
+
+        // pied de page      
+        let copyright = "prenom - " + (new Date()).getFullYear() ;
+        $("footer").html(copyright)
+                    .css("text-align", "center");
+    </script>
+    <style>
+        img{
+            max-width:100%;
+        }
+    </style>
+</body>
+</html>

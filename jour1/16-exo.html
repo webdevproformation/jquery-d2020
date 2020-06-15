@@ -1,0 +1,81 @@
+<!-- créer le fichier 16-exo.html :
+
+    div class container
+        h1
+        p
+        div
+    
+    avec jquery réaliser les modifications suivantes :
+
+    sur l'élément ayant la balise h1 
+                    écrire Titre principale de la page
+                    centrer dans la page le texte du titre
+    sur l'élément ayant la balise p
+                    écrire lorem ipsum
+                    marge en haut et bas de 40px
+    sur l'élément ayant la balise div
+                    écrire dedans le texte suivant : bonjour ami <br> comment allez vous
+                    changer la taille de police => 40px
+                    changer la couleur de police => lightblue
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <!--  .container>h1+p+div -->
+    <div class="container">
+        <h1></h1>
+        <p></p>
+        <div></div>
+    </div>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        $("h1").html("Titre principale de la page")
+                .css("text-align" , "center");
+
+        $("p").html("lorem ipsum")
+              .css("margin-top", 40)
+              .css("margin-bottom", 40);
+
+        // autre solution
+        $("p").html("lorem ipsum").css("margin", "40px 0" );
+
+        // 40px les 4 cotés
+        // 40px 0 haut et bas 40px et gauche et droite 0
+        // 10px 20px 30px 40px => dans le sens des aiguilles d'une montre  haut droite bas gauche
+
+        $(".container div").html("bonjour ami <br> comment allez vous")
+                            .css("font-size" , 40)
+                            .css("color" , "lightblue");
+    </script>
+</body>
+</html>
+<!-- 
+    créer le fichier 17-exo.html
+
+    div class container
+        header
+        section
+        footer
+
+    via jQuery réaliser les modifications suivantes  
+    
+    pour la zone ayant la balise header
+        ajouter le texte html suivant :
+            <img src="https://via.placeholder.com/200x80" alt="">
+            et centrer l'image 
+    
+    pour la zone ayant la balise section
+        ajouter 10 images 
+         <img src="https://via.placeholder.com/350x200" alt="">
+         sous forme de grille de 4 colonnes
+    
+    pour la zone ayant la balise footer
+        écrire prénom - année en cours
+        centrer dans la page et un peu d'ombre portée au niveau du texte (text-shadow)
+    
+-->
