@@ -1,0 +1,36 @@
+<!-- 
+    11-formulaire.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="nom">nom</label>
+        <input type="text" class="nom">
+        <label for="age">age</label>
+        <input type="text" class="age">
+    </form>
+    <button>Envoyer</button>
+    <p>Résultat : </p>
+    <!--
+        je remplis les deux champs du formulaire 
+        lorsque je clique sur le bouton Envoyer 
+        remplir la balise p avec le texte saisis dans les deux champs du formulaire
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $("button").click(function(){
+            let nom = $(".nom").val(); // récupérer la valeur des balises input / textarea / select
+            let age = $(".age").val();
+            $("p").html("Résultat : " + nom + " " + age );
+        });
+    </script>
+</body>
+</html>
