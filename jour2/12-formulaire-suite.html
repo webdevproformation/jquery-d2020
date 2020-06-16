@@ -1,0 +1,44 @@
+<!-- 
+    12-formulaire-suite.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" class="nom">
+        <input type="submit" class="envoyer">
+    </form>
+    <p class="resultat">Resultat</p>
+    <p></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // spécialement pour les événéments 
+        // la fonction appelée lors du click dispose d'un argument
+        // e pour event 
+        // permet d'avoir des informations sur l'événement concerné
+        $("p").click(function(e){
+            console.log(e);
+            // e contient de nombreuses informations sur l'événement déclenché 
+            // click sur quel element html ? =>
+            // .currentTarget
+            $(this)
+            $(e.target).html("je suis cliqué");
+            // .preventDefault() => cette 
+        });
+
+        $(".envoyer").click(function(e){
+            // e est un objet qui contient toutes les informations sur l'événement déclenché
+            e.preventDefault(); // bloquer le rechargement de la page suite au clique que le bouton submit
+            $(e.target).val("merci !");
+            let nom = $(".nom").val();
+            $(".resultat").html("Resultat : " + nom);
+        });
+
+    </script>
+</body>
+</html>
