@@ -1,0 +1,52 @@
+<!-- 
+    créer la page 13-exo.html
+
+    créer un formulaire contenant trois champs
+        label prénom   
+        input de type text qui aura class prenom
+        label age
+        input de type text qui aura class age 
+        input de type submit qui aura la class envoyer
+    créer un paragraphe ayant la class resultat
+
+    en jquery
+
+    lorsque je vais cliquer sur le bouton ayant la class envoyer
+       1 bloquer le comportement par defaut de rechargement de page
+       2 créer une variable prenom récupérer dedans la valeur saisie dans le champs ayant la class prenom
+       3 créer une variable age récupérer dedans la valeur saisie dans le champs ayant la class age
+       4 concaténer la valeur stockée dans la variable prenom + age et l'insérer dans la balise p ayant la class resultat
+       // ajax GET POST 
+
+       $(".resultat").html(prenom + " "+ age);
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" class="prenom">
+        <input type="text" class="age">
+        <input type="submit" class="envoyer">
+    </form>
+    <p class="resultat"></p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(".envoyer").click(function(e){
+            e.preventDefault();
+            let prenom = $(".prenom").val();
+            let age = $(".age").val();
+            if(prenom != "" && age != ""){
+                let resultat = prenom + " " + age ;
+                $(".resultat").html(resultat);
+            }else{
+                alert("Veuillez compléter les deux champs");
+            }
+        });
+    </script>
+</body>
+</html>
