@@ -1,0 +1,49 @@
+<!-- 
+    créer la page 10-exo.html
+
+    contenir deux images 
+        la première image a la class img1 si <img src="" alt="">
+        la deuxième image a la class img2 <img src="">
+
+    via jquery
+    pour toutes les images modifier l'attribut src à la valeur suivante https://via.placeholder.com/300
+    $("img").attr("src", "https://via.placeholder.com/300");
+
+    si je clique sur l'image qui a la class img1 alors écrire dans la console le texte suivant
+        j'ai cliqué sur la première image
+    
+    si je passe la souris sur l'image qui a la class img2 alors je lui mets une bordure de 1px solid red
+    si je sors la souris de l'image qui a la class img2 alors j'enlève la bordure 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- img.img$*2 -->
+    <img src="" alt="" class="img1">
+    <img src="" alt="" class="img2">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("img").attr("src", "https://via.placeholder.com/300");
+
+        $(".img1").click(function(){
+            console.log("j'ai cliqué sur la première image");
+        });
+
+        $(".img2").mouseover(function(){
+                $(this).css("border", "1px solid red");
+        });
+        // possible d'utiliser .mouseenter()
+
+        $(".img2").mouseleave(function(){
+            $(this).css("border", 0);
+        });
+        // possible d'utiliser .mouseout()
+
+    </script>
+</body>
+</html>
