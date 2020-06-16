@@ -2,3 +2,81 @@
     nouveau chapitre
     06-attribute.html
 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Lorem, ipsum dolor.</p>
+    <img src="" alt="">
+    <h1 id="conclusion"></h1>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // nouveau chapitre => Manipulation Attribute
+        // jquery permet de facilement modifier les attributs des balises 
+        // ajouter / modifier / supprimer des class
+        // .addClass() - .removeClass() - .toggleClass()
+        // n'importe quelle propriété
+        // .attr() .prop()
+        // .css() => facilement ajouter des propriétés css
+
+        // avant l'appel de jquery ajouter un paragraphe contenant 3 mots fictifs
+        // ajouter deux class à mon paragraphe
+        // attention pour le voir l'ajout => lancer l'inspecteur  
+        $("p").addClass("intro intro2");
+
+        $("p").attr("class", "intro3");
+
+        // ajouter l'attribut id pour ce paragraphe
+
+        $("p").attr("id", "presentation");
+        
+        $("img").prop("src" , "https://via.placeholder.com/200")
+
+        // remplacer attr() par prop()
+        // lié à l'histoire de création de jquery
+        // prop() => attr()
+        $("#conclusion").attr("id", "fin").html("fin");
+        // utiliser ces méthodes pour faire de l'animation 
+
+        // première manière d'utiliser la méthode .css()
+        // via un chainage 
+        $("p").css("font-size", 30).css("color" , "lightgreen");
+
+        // créer une variable de type objet
+        // qui va contenir toutes les propriétés voulues
+        let pStyle = {
+            "color": "red",
+            "font-size" : 12,
+            "font-family" : "Arial"
+        };
+
+        $("p").css(pStyle);
+    </script>
+</body>
+</html>
+<!-- 
+    créer le fichier 07-exo.html
+
+    dans ce fichier insérer les balises html suivantes :
+
+    3 paragraphes qui contiennent 5 mots fictifs
+
+    via jquery réaliser les modifications du DOM suivantes :
+
+    pour le 1er paragraphe 
+        augmenter sa taille de police de 20%
+        écarter les lettres de 20px
+    
+    pour le 2ème paragraphe
+        ajouter  attribut id qui aura la valeur section
+    
+    pour le dernier paragraphe
+        supprimer les marge automatiques
+        ajouter une balise <hr> après cette balise
+
+
+-->
