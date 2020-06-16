@@ -58,22 +58,23 @@
 
     via jquery 
         dans la balise header ajouter dans cette balise le html suivant
-                <ul>
+                <ul> // concaténation dans une variable 
                     <li>Accueil</li>
                     <li>Contact</li>
-                </ul>
-        dans la balise header ajouter avant  le menu le html suivant
+                </ul> .html()
+        dans la balise header ajouter avant  le menu le html suivant $("header ul").before()
                 <img src="https://via.placeholder.com/150x80" alt="">
 
         sur le header faire en sorte que l'image soit à côté du menu
         sur le menu du header, faire en sorte que les items du menu soit les uns à côtés des autres sans puce
+        // list-style : none
 
         dans la balise news 
                 insérer le texte suivant : <h1>Les nouveautés</h1>
                 mettre une bordure de 1px solid black sur cette balise 
         
         dans la balise infos
-                ajouter le texte suivante : <h1>Liste des infos</h1>
-                ajouter la class homepage à cette balise
+                ajouter le texte suivante : <h1>Liste des infos</h1> .html()
+                ajouter la class homepage à cette balise $(".infos").html("<h1>Liste des infos</h1>").addClass("homepage");
 -->
 
