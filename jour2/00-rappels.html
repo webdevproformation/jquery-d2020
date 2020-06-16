@@ -1,0 +1,82 @@
+<!-- Bonjour tout le monde !!
+
+Des questions ?? => rappels 
+
+--------------------
+
+https://formation.webdevpro.net/jquery/
+login : j
+mdp : query 
+
+github : https://github.com/webdevproformation/jquery-d2020
+
+
+--------------------
+
+Question sur les eq()
+
+--------------------
+
+jQuery => librairie qui facilite la vie du développeur lorsqu'il doit manipuler le DOM 
+
+DOM : Document Objet Model => Page web 
+
+hier pour découvrir jquery => via jQuery rempli des balises html vide 
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <h2></h2>
+        <p></p>
+        <h2></h2>
+        <p></p>
+
+   
+    <script>
+        // javascript = javascript vanille = javascript sans librairie
+        document.querySelector("h2").innerHTML = "texte pour le 1ère titre";
+        // remplir les deux p dans ma page 
+        let paragraphes = document.querySelectorAll("p");
+        console.log(paragraphes); // tableau javascript qui contient de objets
+        // JSON
+        // tableau en javascript 
+        // remplir le 1ère paragraphe sélectionné dans le DOM
+        paragraphes[0].innerHTML = "Premier paragraphe";
+
+        // remplir le 2ème paragraphe sélectionné dans le DOM
+        paragraphes[1].innerHTML = "Deuxième paragraphe" ;
+    </script>
+    <!-- nous allons réaliser les mêmes modifications avec jQuery 
+        => réaliser les mêmes traitements mais avec moins de texte
+        pour pouvoir utiliser jquery $() <= pas connu par le navigateur
+        il faut d'abord le charger 
+        CDN pour avoir cette fonction => jquery.com > download > 
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("p").first().html("nouveau texte");
+        // équivalent
+        $("p").eq(0).html("p modifié");
+        // équivalent
+        $("p:first").html("modifié avec nth-child");
+
+        $("p").eq(1).html("p modifié par jQuery");
+        $("p:last").html("modifié ici");
+
+        // chainage 
+        // gain de productivité 
+
+         $("p").eq(1) 
+            .css("color", "#00FF00")
+            .css("font-size",30)
+            .html("dernier paragraphe encore modifié") ;
+        // attention où vous mettez le symbole ; 
+    </script>
+</body>
+</html>
