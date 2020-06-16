@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="titre">Menu</h1>
+  <ul>
+    <li><a href="#">Lorem ipsum dolor.</a></li>
+    <li class="item"><a href="#">Nulla, modi, beatae?</a></li>
+    <li><a href="#">Illum, iste, explicabo!</a></li>
+    <li><a href="#">Debitis, deleniti, id?</a> <a href="#">Debitis, deleniti, id?</a> <a href="#">Debitis, deleniti, id?</a> <a href="#">Debitis, deleniti, id?</a></li>
+    <li><a href="#">Facilis, sapiente, ad.</a></li>
+  </ul>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script>
+      $("li:first a").html("nouvel article");
+
+      $("a").eq(2).html("<b>information technique</b>");
+
+      $("a").last().html("fin");
+
+      $(".item").html("<p>un peu de texte ajouté via le script</p>");
+      // non demandé
+      $(".item p").css("margin", 0);
+
+        // répond à la question 5 et 6 et 7
+      $("h1")
+        .prepend("Préfix - ")
+        .append(" - Suffixe")
+        .after("<hr>")
+        .before("<p>un petit paragraphe</p>");
+
+  </script>
+</body>
+</html>
+<!-- 
+    nouveau chapitre
+    06-attribute.html
+-->

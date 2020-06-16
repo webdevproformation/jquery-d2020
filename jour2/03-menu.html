@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            display: flex;
+            list-style: none;
+        }
+        .menu li{
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <!-- ul.menu>li*4>lorem1 -->
+            <ul class="menu">
+                <li>Lorem.</li>
+                <li>Tempora!</li>
+                <li>Provident?</li>
+                <li>Delectus?</li>
+            </ul>
+        </header>
+    </div>
+    <!-- 
+        je veux ajouter AVANT mon menu => une image le logo => .before()
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let logo = "<img src=\"https://via.placeholder.com/100x60\" alt=\"\">";
+        $(".menu").before(logo);
+        // une fois l'image ajoutée on peut encore utiliser jquery pour finaliser la mise en page 
+
+        $("header").css("display", "flex"); 
+    </script>
+</body>
+</html>
+<!-- 
+    créer un nouveau fichier 04-exo.html
+    dans le support de cours => https://formation.webdevpro.net/jquery/02-dom.html > section 5 > Cas n°1 
+
+-->
