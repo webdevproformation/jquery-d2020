@@ -1,0 +1,69 @@
+<!-- 
+    créer le fichier 01-exo.html
+
+    dans la balise body contient
+        h1
+        p 
+        ul qui contient 4 li
+
+    jquery réaliser les manipulations suivantes du DOM
+
+    remplir le h1 avec le texte  titre principale + lui donner une couleur rouge + changer
+    sa font family en Arial
+
+    remplir le p avec un texte fictif de 30 mots + text shadow
+
+    pour le 1ère li => élément 1
+    pour le 2ème li => élément 2
+    pour le 3ème li => élément 3
+    pour le 4ème li => élément 4
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- h1+p+ul>li*4 -->
+    <h1></h1>
+    <p></p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li> 
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $("h1").html("titre principale").css("color", "red").css("font-family" , "Arial");
+        // Arial => police sans serif sans empattement
+
+        let textFictif = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur dicta ab, quo, velit quasi assumenda aspernatur maiores unde quia voluptatem pariatur maxime officiis aut quaerat esse deleniti, dolor earum illo!";
+
+        $("p").html(textFictif).css("text-shadow" , "2px 2px 2px grey");
+
+        // solution 1 répéter la même instruction
+        /*$("li").eq(0).html("Element 1");
+        $("li").eq(1).html("Element 2");
+        $("li").eq(2).html("Element 3");
+        $("li").eq(3).html("Element 4");*/
+
+        // solution 2 boucle
+
+        for(let i = 0 ; i <= 3 ; i++){
+           let j = i + 1 ;
+           // ne pas confondre
+           // i + 1 ajouter + 1 à i
+           // i = i + 1 ajouter + 1 à i ET stocker dans lui même 
+            $("li").eq(i).html("Element " + j );
+        }
+
+    </script>
+
+</body>
+</html>
+<!-- 
+    02-dom.html
+-->

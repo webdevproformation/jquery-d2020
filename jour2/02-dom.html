@@ -1,0 +1,63 @@
+<!-- 
+    02-dom.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .element{
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- p.p$*4>lorem3 
+            Emmet générer 4 paragrahes  avec des class différentes qui contiennent 3 mots fictifs chacuns -->
+        <p class="p1">Lorem, ipsum dolor.</p>
+        <p class="p2">Beatae, magni neque.</p>
+        
+        <p class="p3">Quasi, consequatur ratione!</p>
+        
+         <p class="p4" style="color:blue ; font-size: 20px; ">Distinctio, non quod!</p>
+       
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // 
+        $(".p1").html("texte modifié");
+        // méthode html remplacer le contenu de la balise html sélectionnée
+
+        $(".p2").append(" text après");
+        // ajouter du texte à la fin de la balise (DEDANS)
+
+        $(".p2").prepend("text avant ");
+        // ajouter du texte au début de la balise (DEDANS)
+
+        $(".p3").before("AVANT");
+        // ajouter du texte juste AVANT la balise
+
+        $(".p3").after("APRES");
+        // ajouter du texte juste APRES la balise
+
+        $(".p4").before("<div>").after("</div>")
+
+        $(".p4").wrap("<div class=\"element\"></div>");
+        // wrap => emballager des produits 
+    </script>
+</body>
+</html>
+
+<!-- 
+    1er cas où on peut utiliser ces méthodes nouvelles
+
+    => barre de menu => ajouter un logo AVANT la barre de menu
+    => articles => à la fin des articles => ajouter des liens facebook icone 
+    => titre => ajouter le nombre de commentaires qui ont été réalisés dans l'article 
+    => Font awesome ?? => librairie en + pour ajouter des icones
+
+    => A toute suite !!
+-->
