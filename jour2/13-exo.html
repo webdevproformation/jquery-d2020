@@ -38,8 +38,9 @@
     <script>
         $(".envoyer").click(function(e){
             e.preventDefault();
-            let prenom = $(".prenom").val();
-            let age = $(".age").val();
+            let prenom = $(".prenom").val().trim();
+            // .trim() => enlever les espaces avant et après le texte
+            let age = $(".age").val().trim();
             if(prenom != "" && age != ""){
                 let resultat = prenom + " " + age ;
                 $(".resultat").html(resultat);
@@ -50,3 +51,38 @@
     </script>
 </body>
 </html>
+<!-- 
+    fin du chapitre sur les événements
+    // demain site complet 
+    // créer une nouvelle page 14-exo.html
+
+    html 
+        body
+            header
+
+            section 
+                form
+                    input de type text class titre
+                    input de type text class contenu
+                    input de type submit class envoyer
+            section class list-articles
+
+    en jquery
+
+    lorsque l'internaute va cliquer sur le bouton envoyer
+    alors
+        1 bloquer le comportement par défaut de rechargement de la page e.preventDefault()
+        2 récupérer les informations saisies dans le champ ayant la class titre
+        3 récupérer les informations saisies dans le champ ayant la class contenu
+        vérifier que les deux champs sont bien remplis
+
+        si ils sont bien remplis
+            réaliser la concaténation suivantes
+            let article = "<h2>"+titre + "</h2>";
+                        += "<p>"+contenu + "</p>";
+            
+            ajouter à la suite de la balise ayant la class list-articles la contenu de la variable article
+
+        si un des champs n'est repli
+            afficher un message d'alert : veuillez compléter les champs
+-->
