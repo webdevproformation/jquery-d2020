@@ -31,6 +31,14 @@
             let age = $(".age").val();
             $("p").html("Résultat : " + nom + " " + age );
         });
+
+        $(window).keydown(function(e){
+            if(e.originalEvent.code == "Enter"){
+                let nom = $(".nom").val(); // récupérer la valeur des balises input / textarea / select
+                let age = $(".age").val();
+                $("p").html("Résultat : " + nom + " " + age );
+            }
+        })
     </script>
 </body>
 </html>
