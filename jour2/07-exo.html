@@ -1,0 +1,79 @@
+<!-- 
+    créer le fichier 07-exo.html,  dans ce fichier insérer les balises html suivantes :
+
+    3 paragraphes qui contiennent 5 mots fictifs
+
+    via jquery réaliser les modifications du DOM suivantes :
+
+    pour le 1er paragraphe 
+        augmenter sa taille de police de 20% (1.2em)
+        écarter les lettres de 20px letter-spacing
+    
+    pour le 2ème paragraphe
+        ajouter  attribut id qui aura la valeur section
+    
+    pour le dernier paragraphe
+        supprimer les marge automatiques
+        ajouter une balise <hr> après cette balise
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- p*3>lorem5 -->
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Quod earum iure perspiciatis quibusdam.</p>
+    <p>Explicabo soluta molestias saepe laboriosam!</p>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let pFirstStyle = {
+            "font-size" : "1.2em",
+            "letter-spacing" : 10 // https://developer.mozilla.org/en-US/docs/Web/CSS/letter-spacing
+        };
+        $("p").eq(0).css(pFirstStyle);
+
+        $("p").eq(1).attr("id", "section");
+        // équivalent     
+        //$("p").eq(1).prop("id", "section");
+        // vérifier que le traitement est bien effectué via l'inspecteur du navigateur
+
+        $("p").last().css("margin", 0).after("<hr>");
+        // informatique c'est toujours bien d'avoir plusieurs solutions pour un même problème 
+    </script>
+</body>
+</html>
+<!-- 
+    créer une nouvelle page 08-exo.html, ce page contient 
+
+    balise header
+
+    balise section
+        dans cette balise deux balises
+            div qui a la class news
+            div qui a la class infos
+
+    via jquery 
+        dans la balise header ajouter dans cette balise le html suivant
+                <ul>
+                    <li>Accueil</li>
+                    <li>Contact</li>
+                </ul>
+        dans la balise header ajouter avant  le menu le html suivant
+                <img src="https://via.placeholder.com/150x80" alt="">
+
+        sur le header faire en sorte que l'image soit à côté du menu
+        sur le menu du header, faire en sorte que les items du menu soit les uns à côtés des autres sans puce
+
+        dans la balise news 
+                insérer le texte suivant : <h1>Les nouveautés</h1>
+                mettre une bordure de 1px solid black sur cette balise 
+        
+        dans la balise infos
+                ajouter le texte suivante : <h1>Liste des infos</h1>
+                ajouter la class homepage à cette balise
+-->
+
