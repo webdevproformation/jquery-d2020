@@ -18,3 +18,27 @@ $("header").html(entete);
 let pied = "Malik - "+ (new Date()).getFullYear();
 
 $("footer").html(pied);
+
+
+// dans le fichier index.js 
+// générer 10 articles => boucle
+/*
+    <div>
+        <h2>Article 1</h2>
+        <img src="https://via.placeholder.com/300x200" alt="">
+        <p>lorem</p>
+    </div>
+
+    injecter dans la balise section via jquery 
+*/
+
+// dans le fichier presentation.js 
+// générer 10 articles => boucle
+/*
+    <div>
+        <img src="https://via.placeholder.com/400x200" alt="">
+        <p>projet 1</p>
+    </div>
+
+    injecter dans la balise section via jquery 
+*/
