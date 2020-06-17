@@ -63,6 +63,33 @@
                 <p>Eius consequuntur quisquam, voluptatum expedita repudiandae sint corrupti ut. Deleniti cum praesentium quod molestiae suscipit provident ab aperiam dignissimos repellat assumenda! Quaerat impedit, iusto ea debitis doloribus assumenda quia ullam.</p><!-- 5 -->
             </div>
         </section>
+
+        <style>
+            .pagination{
+                display: flex;
+                list-style: none;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+            .pagination li{
+                padding: 10px;
+                margin: 10px;
+                border:1px solid black;
+                background-color: chocolate;
+            }
+        </style>
+        <ul class="pagination">
+            <!-- li*4>{$} -->
+            <li>1</li>
+            <li> <!-- lien hypertexte :  -->
+                <a href="http://127.0.0.1:5500/jour3/02-exo.html?page=2">
+                    2
+                </a>
+            </li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
