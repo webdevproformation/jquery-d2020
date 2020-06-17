@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 960px;
+            margin: 0 auto;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            padding-bottom: 10px;
+            border-bottom: 1px solid black;
+        }
+
+        header ul{
+            display: flex;
+            list-style: none;
+        }
+        header ul li{
+            margin-right: 10px;
+        }
+
+        section{
+            display: grid; /* créer une grille */
+            grid-template-columns: repeat(3, 1fr); /* 3 colonnes largeur 1/3 de la place restante dans le parent 
+                (960px - 2 * 10px ) / 3 
+            */
+            grid-gap: 10px;
+            padding-top: 10px;
+        }
+
+        section div{
+            background: lightblue;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header></header>
+        <section>
+            <!-- div*3>(h2>lorem3)+(p>lorem10)+(button>{lire la suite})+p>lorem30 -->
+            <div>
+                <h2>Lorem, ipsum dolor.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa, nisi!</p>
+                <button>lire la suite</button>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error optio architecto sapiente eaque ipsum molestias, cumque voluptatibus expedita? Cum aperiam, cumque nisi suscipit aspernatur nemo! Accusamus odio nulla tempora dolore.</p><!-- 1 -->
+            </div>
+            <div>
+                <h2>Laudantium, numquam quia!</h2>
+                <p>Iste id excepturi deserunt eos dolorum saepe amet maiores harum.</p>
+                <button>lire la suite</button>
+                <p>Reprehenderit aliquid quis excepturi voluptatibus libero at nemo voluptatum iste quisquam, aperiam nisi id explicabo, odit mollitia voluptates eius expedita quo, molestiae quod aliquam. Suscipit, nam nihil? Fugit, et quod.</p><!-- 3 -->
+            </div>
+            <div>
+                <h2>Sit, optio nihil.</h2>
+                <p>Voluptates nulla repudiandae doloribus vel exercitationem non est labore itaque.</p>
+                <button>lire la suite</button>
+                <p>Eius consequuntur quisquam, voluptatum expedita repudiandae sint corrupti ut. Deleniti cum praesentium quod molestiae suscipit provident ab aperiam dignissimos repellat assumenda! Quaerat impedit, iusto ea debitis doloribus assumenda quia ullam.</p><!-- 5 -->
+            </div>
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // remplir la balise header  .html()
+        let entete =  "<img src=\"https://via.placeholder.com/150x50\" alt=\"\" class=\"logo\">";
+            entete += "<ul>" ;
+            entete += "<li>Accueil</li>" ;
+            entete += "<li>Présentation</li>";
+            entete += "</ul>";
+
+        $("header").html(entete);
+
+        // effet sur le menu 
+        $(".logo").click(function(e){
+            $(e.target).next().toggle();
+            //$(e.target).prev().css("font-size", 50);
+        });
+
+        for(let i = 1 ; i <= 5 ; i = i + 2 ){
+           // $("p").eq(i).hide();
+        }
+
+        $("p:odd").hide(); // masquer les paragraphes 1 3 5 7 ....
+        // $("p:even").hide() masquer les paragraphes 0 2 4 6 8
+
+        // effet lire la suite
+        $("button").click(function(e){
+            $(e.target).next().show(); // afficher le paragraphe qui suit le bouton cliqué
+            // $(e.target).hide(); et masquer le bouton lire la suite cliqué
+        });
+    </script>
+  
+</body>
+</html>

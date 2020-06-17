@@ -1,0 +1,100 @@
+<!--
+    01-animation.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <button class="btn1">Bouton 1</button>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad porro incidunt accusamus magnam, exercitationem minima!</p>
+        </div>
+        <div>
+            <button class="btn2">Bouton 2</button>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad porro incidunt accusamus magnam, exercitationem minima!</p>
+        </div>
+        <div>
+            <button class="btn3">Bouton 3</button>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad porro incidunt accusamus magnam, exercitationem minima!</p>
+        </div>
+    </div>
+    <style>
+        .container{
+            display: flex;
+        }
+        /*en général, il faut mettre la balise style dans le head de la page et non dans le body*/
+        .container div{
+            width:33%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        /* .hide() masquer */
+        /* lorsque je clique que le premier bouton le p qui suit soit masqué*/
+        $(".btn1").click(function(e){
+            // pour la balise button => pas besoin de mettre e.preventDefault();
+            // pas de rechargement de page
+            // $("p").eq(0)
+            $(e.target).next().hide();
+            // $(e.target) == $(".btn1") == lui même == élément sur lequel je suis en train de de faire une action == cliquer = target = cible , e de l'événement 
+            // $(e.target) == $(this)
+        });
+
+        /* on sélectionne le 2ème p dans la page et on le masque */
+
+        $("p").eq(1).hide();
+        /* si je clique sur le deuxième bouton avec la class .btn2 alors afficher le paragraphe qui suit*/
+
+        $(".btn2").click(function(e){
+            $(e.target).next().show();
+        });
+
+        /* .toggle() => afficher / masquer en même temps*/
+
+        //$("p").last().hide();
+        $(".btn3").click(function(e){
+            $(e.target).next().toggle();
+            // si l'élement est masqué => toggle l'affiche 
+            // si l'élément sélectionné est affiché => toggle le masque
+            // quelque soit la situation par défaut l'élément sélectionné
+        });
+    </script>
+</body>
+</html>
+
+<!-- 
+    créer un nouveau fichier 02-exo.html
+    pour la partie html dans la balise body
+        balise div ayant une class .container
+            header
+            section 
+                3 div
+                    h2 texte fictif sur 3 mots
+                    p avec du texte fictif sur 10 mots
+                    button qui va contenir le texte lire la suite
+                    p avec du texte fictif de 30 mots
+
+    en jquery remplir la partie d'entête
+
+    ajouter ce html dans le header 
+        <img src="https://via.placeholder.com/150x50" alt="" class="logo">
+        <ul>
+            <li>Accueil</li>
+            <li>Présentation</li>
+        </ul>
+
+    effet si vous cliquez sur le logo => masquer le menu
+    si vous re cliquez sur le logo => afficher
+
+    dans la section 
+        masquer le dernier p de chaque div 
+        si vous cliquez sur le bouton lire la suite afficher le p qui le suit
+    
+    css => faire en sorte que ce soit joli
+
+-->
