@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background:linear-gradient( 90deg, #96bb7c ,#d6efc7 );
+            /* utiliser colorhunt */ 
+        }
+
+        .container{
+            width:960px;
+            margin: 0 auto;
+        }
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        header ul{
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+        header ul li{
+            margin-right: 10px;
+        }
+
+        img{
+            max-width: 100%; /* le maximum de la largeur de l'image est celle de son parent */
+        }
+        section{
+            display:grid;
+            grid-template-columns: 1fr 3fr;/* le texte va prendre trois fois plus de place que l'image */
+            grid-gap: 10px;
+        }
+
+        footer{
+            text-align: center;
+        }
+
+        input{
+            padding: 5px 10px;
+        }
+
+        .message{
+            color: red;
+        }
+
+        .error{ /* class qui a été ajoutée via addClass dans jQuery*/
+            border:2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <ul>
+                <li>Accueil</li>
+                <li>Présentation</li>
+            </ul>
+        </header>
+        <section>
+            <div>
+                <img src="https://via.placeholder.com/800" alt="">
+            </div>
+            <div>
+                <h1>Lorem ipsum dolor sit amet.</h1>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, qui.</p>
+                <p>Aspernatur dignissimos nihil odio adipisci at quasi delectus, consequuntur et.</p>
+                <p>Delectus, odio cum soluta nemo adipisci quod dicta libero similique.</p>
+            </div>
+        </section>
+        <footer>
+            <form action="">
+                <input type="text" class="email">
+                <input type="submit" class="envoyer">
+            </form>
+            <p class="message"></p>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        let lastItem = "<li>Nous Contacter</li>";
+        
+        // solution 1
+        $("header ul").append(lastItem);
+        // solution 2
+        //$("header ul li:last").after(lastItem);
+        // solution 3
+        //$("header ul li").last().after(lastItem);
+
+        let logo = "<img src=\"https://via.placeholder.com/150x50\" alt=\"\" >";
+
+        $("header ul").after(logo);
+
+        // solution alternative
+        //$("header ul").append(lastItem).after(logo);
+
+        $("section h1").after("<hr>");
+
+        // bouton de type submit => si je clique dessus => navigateur va vouloir recharger la page
+        $(".envoyer").click(function(e){
+            e.preventDefault(); // bloquer le rechargement de page au moment du clique sur le bouton submit et qui a la class envoyer // visuellement dans le nav
+            let email = $(".email").val();
+            // $(e.target).next().val();
+            if(email != ""){
+                $(".message").html("Merci pour votre email !");
+                $(".email").removeClass("error") // ??? => montrer dans le navigateur + un peu de css 
+                        .val(""); // bonus vider la valeur saisie dans le champ email
+            }else{
+                $(".message").html("Veuillez compléter le champ email");
+                $(".email").addClass("error");
+            }
+        });
+    </script>
+</body>
+</html>

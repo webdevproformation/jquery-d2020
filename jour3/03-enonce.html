@@ -7,6 +7,7 @@
                 <li> Accueil</li>
                 <li> Présentation</li>
             </ul>
+
         section 
             div 
                 img grande image https://via.placeholder.com/800
@@ -15,7 +16,7 @@
                 3 paragraphes avec 10 mots fictifs
         footer
             formulaire 
-                input de type de texte class email
+                input de type de texte class email $("")
                 input de type submit class envoyer
             p class message
     jQuery
@@ -32,10 +33,18 @@
              récupérer la valeur saisie dans le champ ayant la class email 
              si ce champ n'est pas vide
                 remplir le p ayant la class message avec le texte suivant : merci pour votre email 
-                supprimer la class error au champ ayant la class email
+                supprimer la class error au champ ayant la class email removeClass()
             si le champ email est vide alors
                 remplir le p ayant la class message avec le texte suviant : veuillez compléter le champ email
-                ajouter la class error au champ ayant la class email 
+                ajouter la class error au champ ayant la class email  addClass()
         
     css => faire en sorte que ce soit joli
+
+    => dans le tchat énoncé est disponible à l'adresse suivante :
+    https://github.com/webdevproformation/jquery-d2020/blob/master/jour3/03-enonce.html
 -->
+
+$(".envoyer").click(function(e){
+    e.preventDefault();
+    let email = $(".email").val(); // let email = $(e.target).prev().val()
+});
