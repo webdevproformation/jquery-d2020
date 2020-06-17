@@ -53,6 +53,20 @@
         .error{ /* class qui a été ajoutée via addClass dans jQuery*/
             border:2px solid red;
         }
+
+        /* plus que ce soit plus lisible pour vous 
+        si je veux faire en sorte que le footer soit toujours calé sur le bas de l'écran
+        */
+        .container{
+            display: flex;
+            flex-direction: column;
+            min-height:100vh; /* 100% taille de l'écran */
+        }
+
+        section{
+            flex: 1;
+            background: lightblue;
+        }
     </style>
 </head>
 <body>
@@ -116,6 +130,14 @@
                 $(".email").addClass("error");
             }
         });
+
+        // poser maintenant => gros projet site interne (ensemble)
+        // Accueil
+        // Présentation
+        // contact => rdv 15h00 
+        // qcm vers 16h50 eval pour voir le suivi du cours
+
+        
     </script>
 </body>
 </html>
