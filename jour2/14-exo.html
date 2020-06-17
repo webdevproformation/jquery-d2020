@@ -1,0 +1,64 @@
+<!--
+    correction du cas pratique avec formulaire et jQuery
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            width: 960px;
+            margin: 0 auto;/*centrer dans la page*/
+        }
+        .list-articles{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px; /*plus joli*/
+            margin-top: 20px;
+        }
+        .list-articles > * {
+            border:1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Cas pratique</h1>
+    </header>
+    <section>
+        <form>
+            <input type="text" class="titre">
+            <input type="text" class="contenu">
+            <input type="submit" class="envoyer">
+        </form>
+    </section>
+    <section class="list-articles"></section>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        $(".envoyer").click(function(e){
+            e.preventDefault();
+            let titre = $(".titre").val();
+            let contenu = $(".contenu").val();
+
+            if(titre != "" && contenu != ""){
+                let article = "<div>";
+                    article += "<h2>" + titre + "</h2>";
+                    article += "<p>" + contenu + "</p>" ;
+                    article += "</div>";
+                
+                $(".list-articles").prepend(article);
+
+                // vider les champs du formulaire
+                // pour éviter d'avoir plusieurs fois la même info 
+                $(".titre").val("");
+                $(".contenu").val("");
+                
+            }else{
+                alert("attention veuillez compléter les deux champs");
+            }
+        });
+    </script>
+</body>
+</html>
