@@ -16,7 +16,7 @@ let contenu = "<p>Pour nous contacter veuillez compléter le formulaire suivant 
     contenu += "<label>Votre demande :</label>";
     contenu += "<textarea class=\"commentaire\"></textarea>";
     contenu += "<input type=\"submit\" class=\"envoyer\">";
-    contenu += "</form>";
+    contenu += "</form><p class=\"message\"></p>";
 
 $("section").html(contenu).addClass("contact");
 
@@ -26,7 +26,7 @@ $(".envoyer").click(function(e){
     let commentaire = $(".commentaire").val();
 
     if(nom != "" && commentaire != ""){
-        $("section").append("<p>Merci pour votre email</p>");
+        $(".message").html("<p>Merci pour votre email</p>");
         $(".nom").val("");
         $(".commentaire").val("");
     }else{
