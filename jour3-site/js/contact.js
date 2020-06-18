@@ -10,13 +10,15 @@
 //<p>merci pour votre email</p>
 
 
-let contenu = "<form>";
+let contenu = "<p>Pour nous contacter veuillez compléter le formulaire suivant :</p><form>";
+    contenu += "<label>Votre nom :</label>";
     contenu += "<input type=\"text\" class=\"nom\">";
+    contenu += "<label>Votre demande :</label>";
     contenu += "<textarea class=\"commentaire\"></textarea>";
     contenu += "<input type=\"submit\" class=\"envoyer\">";
     contenu += "</form>";
 
-$("section").html(contenu);
+$("section").html(contenu).addClass("contact");
 
 $(".envoyer").click(function(e){
     e.preventDefault();
@@ -24,7 +26,9 @@ $(".envoyer").click(function(e){
     let commentaire = $(".commentaire").val();
 
     if(nom != "" && commentaire != ""){
-        $("section").append("<p>Merci pour votre email</p>")
+        $("section").append("<p>Merci pour votre email</p>");
+        $(".nom").val("");
+        $(".commentaire").val("");
     }else{
         alert("veuillez compléter les deux champs");
     }
@@ -39,7 +43,7 @@ $(".envoyer").click(function(e){
 
 // 6 JSON parcourir dans la page d'accueil pour éviter d'avoir article1 et lorem 
 
-let articles = [
+/* let articles = [
     {
         titre : "Premier article",
         contenu : "fezhfoiezhoihzeoihoiz",
@@ -54,4 +58,4 @@ let articles = [
 
 // boucle qui parourait le variable articles 
 
-articles[i].titre
+articles[i].titre */

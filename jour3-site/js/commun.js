@@ -12,6 +12,21 @@ let entete = "<img src=\"https://via.placeholder.com/150x50\" alt=\"\" >";
 
 $("header").html(entete);
 
+// 4 lorsque l'on clique sur le logo afficher / masquer le menu
+
+$("header img")
+    .mouseenter(function(e){
+        $(e.target).addClass("move");
+        $(e.target).next().toggle();
+    })
+    .mouseout(function(e){
+        $(e.target).removeClass("move");
+        $(e.target).next().toggle();
+    });
+
+
+// effet disponible disponible sur les trois pages 
+// transform 
 
 // prenom et année en cours dans le pied de page
 
